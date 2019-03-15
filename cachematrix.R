@@ -1,9 +1,9 @@
 ## This pair of functions calculates the inverse of a given matrix and then
-## stores it in the cache for subsequent uses of the inverse.
+## stores this value in the cache for subsequent use.
 
-## This function stores a matrix and its inverse. It also creates a list of 
+## makeCacheMatrix stores a matrix and its inverse. It also creates a list of 
 ## functions which can then be used by cacheSolve to retrieve the matrix,
-## and both retrieve and/or set the value of the inverse.
+## and both retrieve and/or set the value of the matrix's inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## This function does the inverse calculation, and sets the value of this
 ## inverse. However, if the inverse is already stored in the cache, it instead
-## returns such value.
+## returns the value from the cache.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
