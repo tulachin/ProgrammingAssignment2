@@ -7,6 +7,9 @@
 
 makeCacheMatrix <- function(matriz = matrix()) {
     inv <- NULL
+    
+    ##This function allows the user to change the matrix without using makeCacheMatrix
+    ##again. It also erases the cached value of the inverse.
     set <- function(y) {
         matriz <<- y
         inv <<- NULL
@@ -17,9 +20,10 @@ makeCacheMatrix <- function(matriz = matrix()) {
     list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
-## This function does the inverse calculation, and sets the value of this
-## inverse. However, if the inverse is already stored in the cache, it instead
-## returns the value from the cache.
+## This function calculates the inverse of the matrix created by makeCacheMatrix,
+## and sets uch value to the parent environment using setinverse(). However,
+## if the inverse is already stored in the cache, it instead returns the value
+## from the cache.
 
 cacheSolve <- function(matriz, ...) {
         ## Return a matrix that is the inverse of 'x' if it is stored in the cache
