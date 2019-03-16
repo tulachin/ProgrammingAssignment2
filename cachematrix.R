@@ -21,7 +21,7 @@ makeCacheMatrix <- function(mat = matrix()) {
 }
 
 ## This function calculates the inverse of the matrix created by makeCacheMatrix,
-## and sets uch value to the parent environment using setinverse(). However,
+## and sets such value to the parent environment using setinverse(). However,
 ## if the inverse is already stored in the cache, it instead returns the value
 ## from the cache.
 
